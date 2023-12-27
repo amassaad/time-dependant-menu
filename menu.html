@@ -1,0 +1,46 @@
+<head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+  <script>
+
+
+    var Now = new Date();
+    var currentHour =   Now.getHours(); // 0-23
+
+  $(document).ready(function(){
+      if (currentHour > 3 && currentHour < 15) {
+        $('.secondmenu').addClass('hiddenmenu');
+        $('.thirdmenu').addClass('hiddenmenu');
+        console.log('lunch');
+        console.log(currentHour);
+
+      } else if (currentHour >= 15 && currentHour < 22) {
+        $('.firstmenu').addClass('hiddenmenu');
+        $('.thirdmenu').addClass('hiddenmenu');
+          console.log('dinner');
+        console.log(currentHour);
+      } else {
+        $('.firstmenu').addClass('hiddenmenu');
+        $('.secondmenu').addClass('hiddenmenu');
+        console.log('late');
+      }
+    });
+  </script>
+
+
+  <div class="rte">
+    <div class="firstmenu ">
+          lunch
+        </div>
+    <div class="secondmenu">
+         dinner
+        </div>
+        <div class="thirdmenu">
+          late night
+        </div>
+
+      plus drinks
+    </div>
+
+  </div>
